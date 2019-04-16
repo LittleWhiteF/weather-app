@@ -11,7 +11,6 @@ ${note}           ${EMPTY}
 
 *** Test Cases ***
 Get Request Wearher
-    [Tags]  get
     Create Session  QueryWeather     ${weather_url}
     ${resp} =   Get Request  QueryWeather  /
     Should Be Equal As Strings   ${resp.status_code}   200
