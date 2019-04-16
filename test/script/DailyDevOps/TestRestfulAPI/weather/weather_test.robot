@@ -14,6 +14,8 @@ Get Request Wearher
     Create Session  QueryWeather     ${weather_url}
     ${resp} =   Get Request  QueryWeather  /
     Should Be Equal As Strings   ${resp.status_code}   200
+    ${content}    Convert To String    ${resp.content}
+    Should Contain    ${content}    London
     set Suite variable    ${result}    p
     set Suite variable    ${note}    ${resp.content}
 
